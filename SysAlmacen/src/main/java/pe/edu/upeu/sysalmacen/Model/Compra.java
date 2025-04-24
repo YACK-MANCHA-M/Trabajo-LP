@@ -1,4 +1,4 @@
-package pe.edu.upeu.sysalmacen.Model;
+package pe.edu.upeu.sysalmacen.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
@@ -46,8 +46,7 @@ public class Compra {
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_comp", nullable = false)
-    private LocalDate fechaComp;
-    @Column(name = "tipo_doc", nullable = false, length = 12)
+    private LocalDate fechaComp;@Column(name = "tipo_doc", nullable = false, length = 12)
     private String tipoDoc;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "fecha_reg", nullable = false)

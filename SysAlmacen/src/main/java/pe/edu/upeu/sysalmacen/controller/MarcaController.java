@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import pe.edu.upeu.sysalmacen.Model.Marca;
+import pe.edu.upeu.sysalmacen.model.Marca;
 import pe.edu.upeu.sysalmacen.service.IMarcaService;
 
 import java.net.URI;
@@ -29,7 +29,8 @@ public class MarcaController {
     public ResponseEntity<Void> save(@RequestBody Marca dto) {
         Marca obj = service.save(dto);
         URI location =
-                ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getIdMarca()).toUri();
+                ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                        .buildAndExpand(obj.getIdMarca()).toUri();
         return ResponseEntity.created(location).build();
     }
     @PutMapping("/{id}")

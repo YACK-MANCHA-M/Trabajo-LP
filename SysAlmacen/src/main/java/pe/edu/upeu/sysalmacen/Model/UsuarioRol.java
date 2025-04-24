@@ -1,4 +1,4 @@
-package pe.edu.upeu.sysalmacen.Model;
+package pe.edu.upeu.sysalmacen.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

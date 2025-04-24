@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import pe.edu.upeu.sysalmacen.Model.Categoria;
+import pe.edu.upeu.sysalmacen.model.Categoria;
 import pe.edu.upeu.sysalmacen.service.ICategoriaService;
 
 import java.net.URI;

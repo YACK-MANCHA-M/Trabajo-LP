@@ -2,8 +2,8 @@ package pe.edu.upeu.sysalmacen.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import pe.edu.upeu.sysalmacen.Model.Marca;
 import pe.edu.upeu.sysalmacen.exception.ModelNotFoundException;
+import pe.edu.upeu.sysalmacen.model.Marca;
 import pe.edu.upeu.sysalmacen.repository.IMarcaRepository;
 
 import java.util.List;
@@ -11,7 +11,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class MarcaServiceImpl implements IMarcaService {
+
     private final IMarcaRepository repository;
+
     @Override
     public Marca save(Marca t) {
         return repository.save(t);
@@ -23,7 +25,7 @@ public class MarcaServiceImpl implements IMarcaService {
         return repository.save(t);
     }
     @Override
-    public List <Marca> findAll() {
+    public List<Marca> findAll() {
         return repository.findAll();
     }
     @Override

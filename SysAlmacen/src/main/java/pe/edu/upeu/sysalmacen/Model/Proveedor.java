@@ -1,4 +1,4 @@
-package pe.edu.upeu.sysalmacen.Model;
+package pe.edu.upeu.sysalmacen.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,8 +23,7 @@ public class Proveedor {
     private String nombresRaso;
     @Column(name = "tipo_doc", nullable = false, length = 12)
     private String tipoDoc;
-    @Column(name = "celular", nullable = false, length = 10)
-    private String celular;
+    @Column(name = "celular", nullable = false, length = 10)private String celular;
     @Column(name = "email", nullable = false, length = 100)
     private String email;
     @Column(name = "direccion", nullable = false, length = 120)

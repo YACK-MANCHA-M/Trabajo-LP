@@ -1,4 +1,4 @@
-package pe.edu.upeu.sysalmacen.Model;
+package pe.edu.upeu.sysalmacen.model;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;

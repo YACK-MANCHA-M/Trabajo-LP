@@ -1,6 +1,6 @@
 package pe.edu.upeu.sysalmacen.service;
 
-import pe.edu.upeu.sysalmacen.Model.Marca;
+import pe.edu.upeu.sysalmacen.model.Marca;
 
 import java.util.List;
 

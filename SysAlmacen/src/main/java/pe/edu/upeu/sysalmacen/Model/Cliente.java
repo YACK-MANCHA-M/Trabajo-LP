@@ -1,4 +1,4 @@
-package pe.edu.upeu.sysalmacen.Model;
+package pe.edu.upeu.sysalmacen.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,6 +19,7 @@ public class Cliente {
     @Id
     @Column(name = "dniruc", nullable = false, length = 12)
     private String dniruc;
+
     @Column(name = "nombres", nullable = false, length = 160)
     private String nombres;
     @Column(name = "rep_legal", length = 160)

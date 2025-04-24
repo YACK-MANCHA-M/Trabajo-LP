@@ -1,4 +1,4 @@
-package pe.edu.upeu.sysalmacen.Model;
+package pe.edu.upeu.sysalmacen.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,8 +31,7 @@ public class Producto {
     private Double stockOld;
     @ManyToOne
     @JoinColumn(name = "id_categoria", referencedColumnName =
-            "id_categoria",
-            nullable = false, foreignKey = @ForeignKey(name =
+            "id_categoria",nullable = false, foreignKey = @ForeignKey(name =
             "FK_CATEGORIA_PRODUCTO") )
     private Categoria categoria;
     @ManyToOne
