@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject, Observable, tap} from 'rxjs';
+import {BehaviorSubject, Observable, Subject, tap} from 'rxjs';
 import {Categoria} from '../modelo/Categoria';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class CategoriaService {
   private url: string = `${environment.HOST}/categorias`;
   private categoriaSubject: BehaviorSubject<Categoria[]> = new BehaviorSubject<Categoria[]>([]);
   categoria$ = this.categoriaSubject.asObservable();
-
+  private messageChange: Subject<string> = new Subject<string>;
   constructor(private http: HttpClient) { }
 
   findAll(){
@@ -26,13 +26,13 @@ export class CategoriaService {
   }
 
   save(categoria: Categoria): Observable<Categoria> {
-    return  this.http.post<Categoria>(this.url, categoria).pipe(
+   return  this.http.post<Categoria>(this.url, categoria).pipe(
       tap(() => this.findAll()),
     );
   }
 
   update(id: number, categoria: Categoria):Observable<Categoria>  {
-    return  this.http.put<Categoria>(this.url+`/${id}`, categoria).pipe(
+   return  this.http.put<Categoria>(this.url+`/${id}`, categoria).pipe(
       tap(() => this.findAll()),
     );
   }
@@ -42,6 +42,8 @@ export class CategoriaService {
       tap(() => this.findAll()),
     );
   }
-
+  setMessageChange(data: string){
+    this.messageChange.next(data);
+  }
 
 }
