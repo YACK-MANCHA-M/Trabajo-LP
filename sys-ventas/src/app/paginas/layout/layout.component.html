@@ -10,6 +10,24 @@
     <span>SysAlmacen</span>
     <span class="example-spacer"></span>
     <span class="example-spacer"> </span>
+    <button mat-icon-button [matMenuTriggerFor]="themeMenu" >
+      <mat-icon>format_color_fill</mat-icon>
+    </button>
+    <mat-menu #themeMenu="matMenu" >
+      @for (theme of themeService.getThemes(); track theme.id){
+        <button mat-menu-item (click)="themeService.setTheme(theme.id)">
+          <div class="theme-menu-item">
+            <div class="color-preview"
+                 [style.background-color]="theme.primary"
+            >
+            </div>
+            <span>{{theme.displayName}}</span>
+          </div>
+        </button>
+      }
+    </mat-menu>
+
+
     <button class="no-border" mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
@@ -57,6 +75,11 @@
               routerLink="/pages/marca" [routerLinkActive]="['active']" style="cursor: pointer">
         <mat-icon>commute</mat-icon>
         <span>Marca</span>
+      </button>
+      <button class="myButton" mat-menu-item (click)="sidenav.toggle()"
+              routerLink="/pages/product" [routerLinkActive]="['active']" style="cursor: pointer">
+        <mat-icon>commute</mat-icon>
+        <span>Producto</span>
       </button>
        <!--
       <mat-divider></mat-divider>
